@@ -1,0 +1,625 @@
+[INFO: train.py:  254]: Namespace(batch_size=None, config='./configs/c3d_ucf101.yaml', epoch=None, learning_rate=None, model_name='c3d', pretrain='./pretrain/r3d50_km_200ep', resume=False, save_dir='./checkpoints', use_gpu=True)
+[INFO: config.py:   68]: ---------------- Train Arguments ----------------
+[INFO: config.py:   70]: MODEL:
+[INFO: config.py:   72]:     name:C3D
+[INFO: config.py:   72]:     format:jpg
+[INFO: config.py:   72]:     num_classes:101
+[INFO: config.py:   72]:     seg_num:1
+[INFO: config.py:   72]:     seglen:16
+[INFO: config.py:   72]:     step:1
+[INFO: config.py:   72]:     image_mean:[0.485, 0.456, 0.406]
+[INFO: config.py:   72]:     image_std:[0.229, 0.224, 0.225]
+[INFO: config.py:   72]:     num_layers:50
+[INFO: config.py:   72]:     topk:5
+[INFO: config.py:   72]:     classind:./data/ucf101_splite/classInd.txt
+[INFO: config.py:   70]: TRAIN:
+[INFO: config.py:   72]:     epoch:30
+[INFO: config.py:   72]:     short_size:120
+[INFO: config.py:   72]:     target_size:112
+[INFO: config.py:   72]:     num_reader_threads:12
+[INFO: config.py:   72]:     seg_num:1
+[INFO: config.py:   72]:     buf_size:1024
+[INFO: config.py:   72]:     batch_size:256
+[INFO: config.py:   72]:     use_gpu:True
+[INFO: config.py:   72]:     num_gpus:1
+[INFO: config.py:   72]:     filelist:./data/ucf101_splite/trainlist01.txt
+[INFO: config.py:   72]:     learning_rate:0.01
+[INFO: config.py:   72]:     learning_rate_decay:0.1
+[INFO: config.py:   72]:     l2_weight_decay:0.001
+[INFO: config.py:   72]:     momentum:0.9
+[INFO: config.py:   72]:     video_path:./data/ucf101
+[INFO: config.py:   72]:     total_videos:9537
+[INFO: config.py:   70]: VALID:
+[INFO: config.py:   72]:     short_size:120
+[INFO: config.py:   72]:     target_size:112
+[INFO: config.py:   72]:     seg_num:1
+[INFO: config.py:   72]:     num_reader_threads:12
+[INFO: config.py:   72]:     buf_size:1024
+[INFO: config.py:   72]:     batch_size:32
+[INFO: config.py:   72]:     filelist:./data/ucf101_splite/testlist01.txt
+[INFO: config.py:   72]:     video_path:./data/ucf101
+[INFO: config.py:   70]: TEST:
+[INFO: config.py:   72]:     seg_num:1
+[INFO: config.py:   72]:     short_size:120
+[INFO: config.py:   72]:     target_size:112
+[INFO: config.py:   72]:     num_reader_threads:6
+[INFO: config.py:   72]:     buf_size:1024
+[INFO: config.py:   72]:     batch_size:1
+[INFO: config.py:   72]:     filelist:./data/ucf101_splite/testlist01.txt
+[INFO: config.py:   72]:     video_path:./data/ucf101
+[INFO: config.py:   73]: -------------------------------------------------
+[INFO: train.py:  157]: Epoch0 lr=0.01
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 0 step 0: [4.6057553], acc: [0.015625]
+[INFO: train.py:  191]: Loss at epoch 0 step 10: [4.1768126], acc: [0.203125]
+[INFO: train.py:  191]: Loss at epoch 0 step 20: [3.3148675], acc: [0.50390625]
+[INFO: train.py:  191]: Loss at epoch 0 step 30: [2.2292767], acc: [0.69921875]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.28391123], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.8940672], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 40: [2.0189176], acc: [0.71875]
+[INFO: train.py:  214]: valid Loss at step 60: [2.7806094], acc: [0.46875]
+[INFO: train.py:  214]: valid Loss at step 80: [1.7692174], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 100: [2.9234002], acc: [0.34375]
+[INFO: train.py:  217]: 验证集准确率为:0.7370232939720154
+[INFO: train.py:  219]: 验证集loss为:1.6102118492126465
+[INFO: train.py:  157]: Epoch1 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 1 step 0: [1.6744602], acc: [0.765625]
+[INFO: train.py:  191]: Loss at epoch 1 step 10: [1.1112295], acc: [0.83203125]
+[INFO: train.py:  191]: Loss at epoch 1 step 20: [0.81265193], acc: [0.8671875]
+[INFO: train.py:  191]: Loss at epoch 1 step 30: [0.6510375], acc: [0.8671875]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.23353952], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5358615], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [1.4091957], acc: [0.71875]
+[INFO: train.py:  214]: valid Loss at step 60: [1.102479], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 80: [0.7366866], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 100: [1.2267184], acc: [0.65625]
+[INFO: train.py:  217]: 验证集准确率为:0.8628178238868713
+[INFO: train.py:  219]: 验证集loss为:0.6372808814048767
+[INFO: train.py:  157]: Epoch2 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 2 step 0: [0.529835], acc: [0.8984375]
+[INFO: train.py:  191]: Loss at epoch 2 step 10: [0.4544745], acc: [0.91796875]
+[INFO: train.py:  191]: Loss at epoch 2 step 20: [0.34451458], acc: [0.9375]
+[INFO: train.py:  191]: Loss at epoch 2 step 30: [0.39025223], acc: [0.9453125]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.11286997], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.4346411], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [1.1765131], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 60: [0.80242467], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.64670384], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 100: [0.7548961], acc: [0.84375]
+[INFO: train.py:  217]: 验证集准确率为:0.8818855881690979
+[INFO: train.py:  219]: 验证集loss为:0.4721529483795166
+[INFO: train.py:  157]: Epoch3 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 3 step 0: [0.2601645], acc: [0.9609375]
+[INFO: train.py:  191]: Loss at epoch 3 step 10: [0.34672004], acc: [0.93359375]
+[INFO: train.py:  191]: Loss at epoch 3 step 20: [0.3035138], acc: [0.953125]
+[INFO: train.py:  191]: Loss at epoch 3 step 30: [0.2074399], acc: [0.95703125]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.0810412], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.3943183], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [1.165865], acc: [0.6875]
+[INFO: train.py:  214]: valid Loss at step 60: [0.8927198], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 80: [0.5606497], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 100: [0.53217894], acc: [0.875]
+[INFO: train.py:  217]: 验证集准确率为:0.8911546468734741
+[INFO: train.py:  219]: 验证集loss为:0.3973630368709564
+[INFO: train.py:  157]: Epoch4 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 4 step 0: [0.23666707], acc: [0.953125]
+[INFO: train.py:  191]: Loss at epoch 4 step 10: [0.2337004], acc: [0.953125]
+[INFO: train.py:  191]: Loss at epoch 4 step 20: [0.24794333], acc: [0.93359375]
+[INFO: train.py:  191]: Loss at epoch 4 step 30: [0.2247786], acc: [0.96484375]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.0951718], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.47251403], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [1.014244], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.64023006], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 80: [0.41201591], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 100: [0.68355334], acc: [0.75]
+[INFO: train.py:  217]: 验证集准确率为:0.8983050584793091
+[INFO: train.py:  219]: 验证集loss为:0.37223386764526367
+[INFO: train.py:  157]: Epoch5 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 5 step 0: [0.15686195], acc: [0.98828125]
+[INFO: train.py:  191]: Loss at epoch 5 step 10: [0.15183604], acc: [0.97265625]
+[INFO: train.py:  191]: Loss at epoch 5 step 20: [0.1394007], acc: [0.98046875]
+[INFO: train.py:  191]: Loss at epoch 5 step 30: [0.17506516], acc: [0.96484375]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.04007941], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.48213226], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [1.0441736], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 60: [0.44813266], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 80: [0.37767166], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 100: [0.4058536], acc: [0.875]
+[INFO: train.py:  217]: 验证集准确率为:0.9017478823661804
+[INFO: train.py:  219]: 验证集loss为:0.34592103958129883
+[INFO: train.py:  157]: Epoch6 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 6 step 0: [0.153145], acc: [0.96484375]
+[INFO: train.py:  191]: Loss at epoch 6 step 10: [0.11933237], acc: [0.9765625]
+[INFO: train.py:  191]: Loss at epoch 6 step 20: [0.08650648], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 6 step 30: [0.09708488], acc: [0.98828125]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.06582116], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.3682735], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 40: [1.2223461], acc: [0.71875]
+[INFO: train.py:  214]: valid Loss at step 60: [0.30428803], acc: [0.96875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.43838063], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 100: [0.50281465], acc: [0.875]
+[INFO: train.py:  217]: 验证集准确率为:0.9107521176338196
+[INFO: train.py:  219]: 验证集loss为:0.3218746781349182
+[INFO: train.py:  157]: Epoch7 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 7 step 0: [0.11040638], acc: [0.9765625]
+[INFO: train.py:  191]: Loss at epoch 7 step 10: [0.11323456], acc: [0.98828125]
+[INFO: train.py:  191]: Loss at epoch 7 step 20: [0.09419786], acc: [0.98828125]
+[INFO: train.py:  191]: Loss at epoch 7 step 30: [0.12181991], acc: [0.97265625]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.07062268], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.36651772], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 40: [0.83695257], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.46613544], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 80: [0.3883375], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 100: [0.6266751], acc: [0.78125]
+[INFO: train.py:  217]: 验证集准确率为:0.898834764957428
+[INFO: train.py:  219]: 验证集loss为:0.3334796130657196
+[INFO: train.py:  157]: Epoch8 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 8 step 0: [0.0843698], acc: [0.984375]
+[INFO: train.py:  191]: Loss at epoch 8 step 10: [0.11810306], acc: [0.97265625]
+[INFO: train.py:  191]: Loss at epoch 8 step 20: [0.07580914], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 8 step 30: [0.07879606], acc: [0.9921875]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.04361046], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.43168002], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.95499504], acc: [0.78125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.5143058], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 80: [0.48524955], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 100: [0.3964802], acc: [0.90625]
+[INFO: train.py:  217]: 验证集准确率为:0.9083686470985413
+[INFO: train.py:  219]: 验证集loss为:0.3255584239959717
+[INFO: train.py:  157]: Epoch9 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 9 step 0: [0.08720174], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 9 step 10: [0.07548947], acc: [0.98828125]
+[INFO: train.py:  191]: Loss at epoch 9 step 20: [0.10138436], acc: [0.97265625]
+[INFO: train.py:  191]: Loss at epoch 9 step 30: [0.07829747], acc: [0.9765625]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.01788753], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.52004623], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.9823694], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 60: [0.41862455], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 80: [0.4222629], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 100: [0.36281905], acc: [0.90625]
+[INFO: train.py:  217]: 验证集准确率为:0.9067796468734741
+[INFO: train.py:  219]: 验证集loss为:0.31464943289756775
+[INFO: train.py:  157]: Epoch10 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 10 step 0: [0.10746244], acc: [0.9765625]
+[INFO: train.py:  191]: Loss at epoch 10 step 10: [0.06766663], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 10 step 20: [0.06937745], acc: [0.98828125]
+[INFO: train.py:  191]: Loss at epoch 10 step 30: [0.06412751], acc: [0.99609375]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.04866792], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.3590297], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 40: [1.1000104], acc: [0.6875]
+[INFO: train.py:  214]: valid Loss at step 60: [0.3836097], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 80: [0.40502542], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 100: [0.34507447], acc: [0.875]
+[INFO: train.py:  217]: 验证集准确率为:0.914724588394165
+[INFO: train.py:  219]: 验证集loss为:0.29231658577919006
+[INFO: train.py:  157]: Epoch11 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 11 step 0: [0.05533191], acc: [0.984375]
+[INFO: train.py:  191]: Loss at epoch 11 step 10: [0.05510102], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 11 step 20: [0.08600208], acc: [0.9765625]
+[INFO: train.py:  191]: Loss at epoch 11 step 30: [0.06848276], acc: [0.984375]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.03446398], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.4751336], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [1.0994256], acc: [0.6875]
+[INFO: train.py:  214]: valid Loss at step 60: [0.45171645], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 80: [0.30250484], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.3484456], acc: [0.90625]
+[INFO: train.py:  217]: 验证集准确率为:0.9067796468734741
+[INFO: train.py:  219]: 验证集loss为:0.31621405482292175
+[INFO: train.py:  157]: Epoch12 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 12 step 0: [0.04440813], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 12 step 10: [0.05328554], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 12 step 20: [0.05611172], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 12 step 30: [0.03518467], acc: [1.]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02748689], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.42034706], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.9766114], acc: [0.71875]
+[INFO: train.py:  214]: valid Loss at step 60: [0.680778], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 80: [0.2981781], acc: [0.96875]
+[INFO: train.py:  214]: valid Loss at step 100: [0.14286488], acc: [0.96875]
+[INFO: train.py:  217]: 验证集准确率为:0.90625
+[INFO: train.py:  219]: 验证集loss为:0.32299286127090454
+[INFO: train.py:  157]: Epoch13 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 13 step 0: [0.04454817], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 13 step 10: [0.06453808], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 13 step 20: [0.04721611], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 13 step 30: [0.05013532], acc: [0.98828125]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.03901165], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.40407044], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 40: [1.0013134], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 60: [0.42379528], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.4248857], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 100: [0.38337713], acc: [0.84375]
+[INFO: train.py:  217]: 验证集准确率为:0.9049258232116699
+[INFO: train.py:  219]: 验证集loss为:0.3111698627471924
+[INFO: train.py:  157]: Epoch14 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 14 step 0: [0.05163496], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 14 step 10: [0.06397397], acc: [0.984375]
+[INFO: train.py:  191]: Loss at epoch 14 step 20: [0.05479606], acc: [0.98828125]
+[INFO: train.py:  191]: Loss at epoch 14 step 30: [0.04637117], acc: [0.98828125]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02682166], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5485878], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [1.0133079], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 60: [0.35022643], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 80: [0.36959952], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.23317781], acc: [0.9375]
+[INFO: train.py:  217]: 验证集准确率为:0.90625
+[INFO: train.py:  219]: 验证集loss为:0.30066314339637756
+[INFO: train.py:  157]: Epoch15 lr=0.009999999776482582
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 15 step 0: [0.03323143], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 15 step 10: [0.04613019], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 15 step 20: [0.03883483], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 15 step 30: [0.05422948], acc: [0.98828125]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02776909], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.50841737], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.9307849], acc: [0.78125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.50351536], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 80: [0.3666965], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.29041222], acc: [0.875]
+[INFO: train.py:  217]: 验证集准确率为:0.9088982939720154
+[INFO: train.py:  219]: 验证集loss为:0.3081159293651581
+[INFO: train.py:  157]: Epoch16 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 16 step 0: [0.050758], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 16 step 10: [0.0528032], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 16 step 20: [0.02826696], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 16 step 30: [0.02643413], acc: [1.]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02635052], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5257095], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.9244734], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.38657433], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.38875702], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.2754165], acc: [0.875]
+[INFO: train.py:  217]: 验证集准确率为:0.9096928238868713
+[INFO: train.py:  219]: 验证集loss为:0.304988831281662
+[INFO: train.py:  157]: Epoch17 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 17 step 0: [0.06181893], acc: [0.98828125]
+[INFO: train.py:  191]: Loss at epoch 17 step 10: [0.02768681], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 17 step 20: [0.04180493], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 17 step 30: [0.0544474], acc: [0.98828125]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02417356], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.54470366], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.9040912], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.45632678], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.36078286], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.28322074], acc: [0.875]
+[INFO: train.py:  217]: 验证集准确率为:0.9091631174087524
+[INFO: train.py:  219]: 验证集loss为:0.301019549369812
+[INFO: train.py:  157]: Epoch18 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 18 step 0: [0.03541211], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 18 step 10: [0.03603897], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 18 step 20: [0.03526889], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 18 step 30: [0.02946731], acc: [1.]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02642211], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.53304565], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.90352064], acc: [0.78125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.36171612], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.36273557], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.24497701], acc: [0.9375]
+[INFO: train.py:  217]: 验证集准确率为:0.9107521176338196
+[INFO: train.py:  219]: 验证集loss为:0.2991015911102295
+[INFO: train.py:  157]: Epoch19 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 19 step 0: [0.03450168], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 19 step 10: [0.06806185], acc: [0.984375]
+[INFO: train.py:  191]: Loss at epoch 19 step 20: [0.03612252], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 19 step 30: [0.03666223], acc: [0.9921875]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02563287], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5306806], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.86890745], acc: [0.78125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.34155765], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.3407504], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.2624899], acc: [0.90625]
+[INFO: train.py:  217]: 验证集准确率为:0.9115465879440308
+[INFO: train.py:  219]: 验证集loss为:0.30055472254753113
+[INFO: train.py:  157]: Epoch20 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 20 step 0: [0.0481724], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 20 step 10: [0.0261605], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 20 step 20: [0.02246714], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 20 step 30: [0.03979849], acc: [0.9921875]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02989544], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5475065], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.87417275], acc: [0.78125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.36052904], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.36748627], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.24872847], acc: [0.9375]
+[INFO: train.py:  217]: 验证集准确率为:0.9112817645072937
+[INFO: train.py:  219]: 验证集loss为:0.2969816029071808
+[INFO: train.py:  157]: Epoch21 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 21 step 0: [0.03830938], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 21 step 10: [0.03251909], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 21 step 20: [0.02418356], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 21 step 30: [0.03263004], acc: [0.99609375]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02396901], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5212466], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.9843075], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 60: [0.36467308], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 80: [0.35506558], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.23031214], acc: [0.9375]
+[INFO: train.py:  217]: 验证集准确率为:0.9112817645072937
+[INFO: train.py:  219]: 验证集loss为:0.2964020371437073
+[INFO: train.py:  157]: Epoch22 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 22 step 0: [0.02381572], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 22 step 10: [0.04081799], acc: [0.98828125]
+[INFO: train.py:  191]: Loss at epoch 22 step 20: [0.0312218], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 22 step 30: [0.02825862], acc: [0.99609375]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02271824], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5552512], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.887175], acc: [0.78125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.45109388], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.32164422], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.24825922], acc: [0.90625]
+[INFO: train.py:  217]: 验证集准确率为:0.9112817645072937
+[INFO: train.py:  219]: 验证集loss为:0.29706162214279175
+[INFO: train.py:  157]: Epoch23 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 23 step 0: [0.03094607], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 23 step 10: [0.0504506], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 23 step 20: [0.03385702], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 23 step 30: [0.03643103], acc: [0.99609375]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02588105], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5016588], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.8901175], acc: [0.78125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.33519548], acc: [0.90625]
+[INFO: train.py:  214]: valid Loss at step 80: [0.3279756], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.2549749], acc: [0.90625]
+[INFO: train.py:  217]: 验证集准确率为:0.9126059412956238
+[INFO: train.py:  219]: 验证集loss为:0.29345640540122986
+[INFO: train.py:  157]: Epoch24 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 24 step 0: [0.04164729], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 24 step 10: [0.04552954], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 24 step 20: [0.04513646], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 24 step 30: [0.02753322], acc: [1.]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02120534], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5222397], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.9049317], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.38687137], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.3564079], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.24697381], acc: [0.96875]
+[INFO: train.py:  217]: 验证集准确率为:0.9096928238868713
+[INFO: train.py:  219]: 验证集loss为:0.2987765073776245
+[INFO: train.py:  157]: Epoch25 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 25 step 0: [0.04156172], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 25 step 10: [0.03076345], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 25 step 20: [0.03631035], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 25 step 30: [0.03539342], acc: [1.]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02088074], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5528035], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.931866], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 60: [0.47969612], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 80: [0.31985095], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.26069665], acc: [0.96875]
+[INFO: train.py:  217]: 验证集准确率为:0.9126059412956238
+[INFO: train.py:  219]: 验证集loss为:0.29749515652656555
+[INFO: train.py:  157]: Epoch26 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 26 step 0: [0.02582358], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 26 step 10: [0.0224377], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 26 step 20: [0.02947894], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 26 step 30: [0.02631271], acc: [1.]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.01992201], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.54626447], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.9300487], acc: [0.75]
+[INFO: train.py:  214]: valid Loss at step 60: [0.43780828], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 80: [0.34379953], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.29316908], acc: [0.875]
+[INFO: train.py:  217]: 验证集准确率为:0.9102224707603455
+[INFO: train.py:  219]: 验证集loss为:0.30010807514190674
+[INFO: train.py:  157]: Epoch27 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 27 step 0: [0.04194283], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 27 step 10: [0.01923149], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 27 step 20: [0.03768747], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 27 step 30: [0.03673399], acc: [0.99609375]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02245948], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.53841037], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.9133183], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.4040513], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 80: [0.32946366], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.30148935], acc: [0.90625]
+[INFO: train.py:  217]: 验证集准确率为:0.9120762944221497
+[INFO: train.py:  219]: 验证集loss为:0.29483750462532043
+[INFO: train.py:  157]: Epoch28 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 28 step 0: [0.02306153], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 28 step 10: [0.02589685], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 28 step 20: [0.03680359], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 28 step 30: [0.05453225], acc: [0.984375]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02361961], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5190313], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [1.0324414], acc: [0.78125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.38108724], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.32820344], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.20958719], acc: [0.96875]
+[INFO: train.py:  217]: 验证集准确率为:0.914459764957428
+[INFO: train.py:  219]: 验证集loss为:0.296804815530777
+[INFO: train.py:  157]: Epoch29 lr=0.0010000000474974513
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 9537, lines length: 9537, total: 9537
+[INFO: train.py:  191]: Loss at epoch 29 step 0: [0.03341222], acc: [0.99609375]
+[INFO: train.py:  191]: Loss at epoch 29 step 10: [0.03800172], acc: [1.]
+[INFO: train.py:  191]: Loss at epoch 29 step 20: [0.04180807], acc: [0.9921875]
+[INFO: train.py:  191]: Loss at epoch 29 step 30: [0.02372316], acc: [1.]
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: train.py:  214]: valid Loss at step 0: [0.02142734], acc: [1.]
+[INFO: train.py:  214]: valid Loss at step 20: [0.5105692], acc: [0.84375]
+[INFO: train.py:  214]: valid Loss at step 40: [0.8952798], acc: [0.8125]
+[INFO: train.py:  214]: valid Loss at step 60: [0.38746482], acc: [0.875]
+[INFO: train.py:  214]: valid Loss at step 80: [0.30707327], acc: [0.9375]
+[INFO: train.py:  214]: valid Loss at step 100: [0.21698226], acc: [0.9375]
+[INFO: train.py:  217]: 验证集准确率为:0.914724588394165
+[INFO: train.py:  219]: 验证集loss为:0.29395532608032227
+[INFO: eval.py:  112]: Namespace(batch_size=None, config='configs/c3d_ucf101.yaml', model_name='c3d', use_gpu=True, weights='./checkpoints/resnet_3d_model')
+[INFO: config.py:   68]: ----------------  test Arguments ----------------
+[INFO: config.py:   70]: MODEL:
+[INFO: config.py:   72]:     name:C3D
+[INFO: config.py:   72]:     format:jpg
+[INFO: config.py:   72]:     num_classes:101
+[INFO: config.py:   72]:     seg_num:1
+[INFO: config.py:   72]:     seglen:16
+[INFO: config.py:   72]:     step:1
+[INFO: config.py:   72]:     image_mean:[0.485, 0.456, 0.406]
+[INFO: config.py:   72]:     image_std:[0.229, 0.224, 0.225]
+[INFO: config.py:   72]:     num_layers:50
+[INFO: config.py:   72]:     topk:5
+[INFO: config.py:   72]:     classind:./data/ucf101_splite/classInd.txt
+[INFO: config.py:   70]: TRAIN:
+[INFO: config.py:   72]:     epoch:30
+[INFO: config.py:   72]:     short_size:120
+[INFO: config.py:   72]:     target_size:112
+[INFO: config.py:   72]:     num_reader_threads:12
+[INFO: config.py:   72]:     seg_num:1
+[INFO: config.py:   72]:     buf_size:1024
+[INFO: config.py:   72]:     batch_size:256
+[INFO: config.py:   72]:     use_gpu:True
+[INFO: config.py:   72]:     num_gpus:1
+[INFO: config.py:   72]:     filelist:./data/ucf101_splite/trainlist01.txt
+[INFO: config.py:   72]:     learning_rate:0.01
+[INFO: config.py:   72]:     learning_rate_decay:0.1
+[INFO: config.py:   72]:     l2_weight_decay:0.001
+[INFO: config.py:   72]:     momentum:0.9
+[INFO: config.py:   72]:     video_path:./data/ucf101
+[INFO: config.py:   72]:     total_videos:9537
+[INFO: config.py:   70]: VALID:
+[INFO: config.py:   72]:     short_size:120
+[INFO: config.py:   72]:     target_size:112
+[INFO: config.py:   72]:     seg_num:1
+[INFO: config.py:   72]:     num_reader_threads:12
+[INFO: config.py:   72]:     buf_size:1024
+[INFO: config.py:   72]:     batch_size:32
+[INFO: config.py:   72]:     filelist:./data/ucf101_splite/testlist01.txt
+[INFO: config.py:   72]:     video_path:./data/ucf101
+[INFO: config.py:   70]: TEST:
+[INFO: config.py:   72]:     seg_num:1
+[INFO: config.py:   72]:     short_size:120
+[INFO: config.py:   72]:     target_size:112
+[INFO: config.py:   72]:     num_reader_threads:6
+[INFO: config.py:   72]:     buf_size:1024
+[INFO: config.py:   72]:     batch_size:1
+[INFO: config.py:   72]:     filelist:./data/ucf101_splite/testlist01.txt
+[INFO: config.py:   72]:     video_path:./data/ucf101
+[INFO: config.py:   73]: -------------------------------------------------
+[INFO: ucf101_reader.py:  232]: trainerid 0, trainer_count 1
+[INFO: ucf101_reader.py:  236]: read images from 0, length: 3783, lines length: 3783, total: 3783
+[INFO: eval.py:  100]: valid Loss at step 300:  acc: 0.960132896900177
+[INFO: eval.py:  100]: valid Loss at step 600:  acc: 0.9833333492279053
+[INFO: eval.py:  100]: valid Loss at step 900:  acc: 0.846666693687439
+[INFO: eval.py:  100]: valid Loss at step 1200:  acc: 0.9433333277702332
+[INFO: eval.py:  100]: valid Loss at step 1500:  acc: 0.8533333539962769
+[INFO: eval.py:  100]: valid Loss at step 1800:  acc: 0.9733333587646484
+[INFO: eval.py:  100]: valid Loss at step 2100:  acc: 0.8833333253860474
+[INFO: eval.py:  100]: valid Loss at step 2400:  acc: 0.9800000190734863
+[INFO: eval.py:  100]: valid Loss at step 2700:  acc: 0.9633333086967468
+[INFO: eval.py:  100]: valid Loss at step 3000:  acc: 0.9200000166893005
+[INFO: eval.py:  100]: valid Loss at step 3300:  acc: 0.9766666889190674
+[INFO: eval.py:  100]: valid Loss at step 3600:  acc: 0.95333331823349
+[INFO: eval.py:  103]: 验证集准确率为:0.9365583062171936

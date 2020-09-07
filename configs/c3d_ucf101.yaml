@@ -1,0 +1,50 @@
+[MODEL]
+name: "C3D"
+format: "mp4"
+num_classes: 101
+seg_num: 1
+seglen: 8
+image_mean: [0.485, 0.456, 0.406]
+image_std: [0.229, 0.224, 0.225]
+num_layers: 50
+topk: 5
+classind: "./data/ucf101/classInd.txt"
+
+[TRAIN]
+epoch: 15
+short_size: 240#256
+target_size: 112#224
+num_reader_threads: 6
+buf_size: 1024
+batch_size: 32
+use_gpu: True
+num_gpus: 1
+filelist: "./data/ucf101/trainlist01.txt"
+learning_rate: 0.1
+learning_rate_decay: 0.1
+l2_weight_decay: 1e-4
+momentum: 0.9
+#video_path: "D:/action recognition/two-stream/twostreamfusion-master/twostreamfusion-master/data/ucf101/jpegs_256"
+video_path:"E:/dataset/UCF-101"
+total_videos: 9537
+
+
+[VALID]
+short_size:  240#256
+target_size: 112#224
+num_reader_threads: 4
+buf_size: 1024
+batch_size: 16
+filelist: "./data/ucf101/testlist01.txt"
+#video_path: "D:/action recognition/two-stream/twostreamfusion-master/twostreamfusion-master/data/ucf101/jpegs_256"
+video_path:"E:/dataset/UCF-101"
+[TEST]
+seg_num: 10
+short_size: 240#256
+target_size: 112#224
+num_reader_threads: 6
+buf_size: 1024
+batch_size: 6
+filelist: "./data/ucf101/testlist01.txt"
+video_path: "D:/action recognition/two-stream/twostreamfusion-master/twostreamfusion-master/data/ucf101/jpegs_256"
+
